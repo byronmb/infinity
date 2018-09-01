@@ -32,11 +32,8 @@ class documentoController {
         });
     }
     registrarArticulo(req, res, next) {
-        console.log("********************************************************");
         Articulo.findOne({where: {titulo: req.body.v_titulo}}).then(function (documento) {
-             console.log("********************************************************");
             if (!documento) {
-                 console.log("********************************************************");
                 var data = {
                     link_imagen: req.body.link_imagen,
                     titulo: req.body.v_titulo,
@@ -146,16 +143,14 @@ class documentoController {
                 .catch(next);
     }
     eliminarRevista(req, res, next) {
-        console.log("***********************1********************************");
         Revista.destroy({where: {id: req.body.id_doc}}).then(function (rowsDelete) {
-            console.log("***********************TE ELIMINASTES********************************");
+    
             res.redirect('/Revista');
         }).catch(next);
     }
     eliminarLibro(req, res, next) {
 
         Libro.destroy({where: {id: req.body.id_doc}}).then(function (rowsDelete) {
-            console.log("***********************TE ELIMINASTES********************************");
             res.redirect('/Libros');
         }).catch(next);
     }
