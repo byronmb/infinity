@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>Proyecto</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="stylesheets/main.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"  crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"  crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+
+        <script src="javascripts/jquery-ui/external/jquery/jquery.js" type="text/javascript"></script>
+        <script src="javascripts/Cuenta.js"></script>
+
+        <% if (loginA == 1) {%>
+        <script>
+            $(document).ready(function () {
+                ListadoRevistaAdmin();
+            });
+        </script>
+        <%}else{%>
+        <script>
+            $(document).ready(function () {
+                ListadoRevista();
+            });
+        </script>
+        <%}%>
+
+    </head>
+    <body id="pagina">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="/" class="logo"><strong><i class="fas fa-home fa-2x" style="color: #17d66b">Proyecto</i>  </strong> </a>
+
+                <nav id="nav">
+                    <a style="color: #17d66b" href="/">Principal</a>
+                    <a style="color: #17d66b" href="/cerrar">Cerrar session</a>
+                </nav>
+                <a style="color: #17d66b" href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+            </div>
+        </header>
+        <!-- Banner -->
+        <section id="banner" >
+            <div class="inner">
+                <div class="container" style="margin: -100px auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <div style="padding: 3em 0 2em 0;background-image: url(../../images/revistas.jpg);
+                                 background-size: 100%; text-align: center;
+                                 position: relative;  background-repeat: no-repeat;">
+                                <h1 style="color: black">Revistas Cientificas</h1>
+                            </div>
+                            <br>
+                            <div id="editar">
+                                <form role="form" data-toggle="validator" id="crearNoticia" class="needs-validation" novalidate method="post" action="/editarRevista" >
+                                    <div class="form-group" style="display: none" >
+                                        <label for="id" class="form-control-label">Plataforma</label>
+                                        <input type="text" data-minlength="3" data-maxlength="150" class="form-control" id="id" name="id" />
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="link_imagen" class="form-control-label">Imagen</label>
+                                        <input type="text" data-minlength="3" data-maxlength="150" class="form-control" id="link_imagen" name="link_imagen" placeholder="url de imagen" required/>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="v_titulo" class="form-control-label">Titulo:</label>
+                                        <input type="text" data-minlength="3" data-maxlength="150" class="form-control" id="v_titulo" name="v_titulo" required/>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="autor" class="form-control-label">Autor/es</label>
+                                        <input class="form-control" data-minlength="3" data-maxlength="1000" id="autor" name="autor" required> 
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="plataforma" class="form-control-label">Plataforma</label>
+                                        <input type="text" data-minlength="3" data-maxlength="150" class="form-control" id="plataforma" name="plataforma" required/>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="url" class="form-control-label">Link</label>
+                                        <input type="text" data-minlength="3" data-maxlength="150" class="form-control" id="link" name="link" required/>
+
+                                    </div>
+                                    <div class="modal-footer">
+
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="location.href = '';" >Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Guardar</button>
+                                    </div>
+                                </form>
+                                 <form method="post" action="/eliminarRevista">
+                                    <div class="form-group" style="display: none">
+                                        <input type="text" data-minlength="3" data-maxlength="150" class="form-control" id="id_doc" name="id_doc"/>
+                                    </div>
+                                     <button type="submit" class="btn btn-primary">Eliminar Revista</button>
+                                </form>
+                            </div>
+                            <form >
+                                
+                                <div class="form-group row" >
+                                    <div class="col-md-3 mb-3">
+                                        <% if (loginA == 1) {%>
+                                        <div>
+                                            <input type="button" onclick="location.href = '/guardarRevista'" value="Añadir"/>
+                                        </div>
+                                        <%}%>
+                                    </div>
+                                </div>
+                            </form>
+                            <form>
+                                <div>
+                                    <div class="form-group row">
+
+                                        <table class="egt" id="tabla">
+                                            <thead>
+                                                <tr>
+                                                    <th >Imagen</th>
+                                                    <th >Titulo</th>
+                                                    <th>Autor/es</th>
+                                                    <th>Plataforma</th> 
+                                                    <th>Link</th> 
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="javascripts/jquery.min.js"></script>
+        <script src="javascripts/skel.min.js"></script>
+        <script src="javascripts/util.js"></script>
+        <script src="javascripts/main.js"></script>
+
+    </body>
+</html>

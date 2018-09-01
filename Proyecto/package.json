@@ -1,0 +1,30 @@
+{
+  "name": "proyecto",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "express-session": "^1.15.6",
+    "firebase": "^5.3.0",
+    "firebase-admin": "^5.13.1",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "mysql2": "^1.6.1",
+    "nib": "^1.1.2",
+    "nodemon": "^1.18.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.38.0",
+    "stylus": "^0.54.5",
+    "uuid": "^3.3.2"
+  }
+}

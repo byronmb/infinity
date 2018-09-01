@@ -1,0 +1,80 @@
+
+<html>
+    <head>
+        <title>Proyecto</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="stylesheets/main.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"  crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"  crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+        <script src="javascripts/jquery-ui/external/jquery/jquery.js" type="text/javascript"></script>
+    </head>
+    <body >
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="/" class="logo"><strong><i class="fas fa-home fa-2x" style="color: #17d66b">Proyecto</i>  </strong> </a>
+                <nav id="nav">
+                    <a style="color: #17d66b" href="/">Principal</a>
+                    <a style="color: #17d66b" href="/cerrar">Cerrar session</a>
+                </nav>
+                <a style="color: #17d66b" href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+            </div>
+        </header>
+
+        <!-- Banner -->
+        <section id="banner">
+            <div class="inner">
+                <div class="container" style="margin: -100px auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <form role="form" data-toggle="validator" id="crearNoticia" class="needs-validation" novalidate method="post" action="/registrarRevista">
+                                <div class="form-group">
+                                    <label for="link_imagen" class="form-control-label">Imagen</label>
+                                    <input type="text" data-minlength="3" data-maxlength="150" class="form-control" id="link_imagen" name="link_imagen" placeholder="url de imagen" required/>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="v_titulo" class="form-control-label">Titulo:</label>
+                                    <input type="text" data-minlength="3" data-maxlength="150" class="form-control" id="v_titulo" name="v_titulo" required/>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="autor" class="form-control-label">Autor/es</label>
+                                    <input class="form-control" data-minlength="3" data-maxlength="1000" id="autor" name="autor" required>
+
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="plataforma" class="form-control-label">Plataforma</label>
+                                    <input type="text" data-minlength="3" data-maxlength="150" class="form-control" id="plataforma" name="plataforma" required/>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="url" class="form-control-label">Link</label>
+                                    <input type="text" data-minlength="3" data-maxlength="150" class="form-control" id="link" name="link" required/>
+
+                                </div>
+                                <div class="modal-footer">
+
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="location.href = '/';" >Cancelar</button>
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="javascripts/jquery.min.js"></script>
+        <script src="javascripts/skel.min.js"></script>
+        <script src="javascripts/util.js"></script>
+        <script src="javascripts/main.js"></script>
+
+    </body>
+</html>
+

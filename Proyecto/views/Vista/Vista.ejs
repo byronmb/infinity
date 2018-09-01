@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<!--
+        Projection by TEMPLATED
+        templated.co @templatedco
+        Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+    <head>
+        <title>Proyecto</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="stylesheets/main.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"  crossorigin="anonymous">
+
+        <style>
+            #logo:hover {
+                margin: 14px 0;
+            }
+            #texto:hover {
+                margin-left: 14px ;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="" class="logo"><strong><i class="fas fa-home fa-2x" style="color: #17d66b">Proyecto</i>  </strong> </a>
+                <nav id="nav">
+                    <a style="color: #17d66b" href="">Principal</a>
+                    <% if (login == false) { %>
+                    <a style="color: #17d66b" href="/registrar">Registbienvrarse</a>
+                    <a style="color: #17d66b" href="/cuenta">Mi Cuenta</a>
+                    <% } else { %>
+                    <% if (loginA == 1) {%>
+                    <a style="color: #17d66b" href="/VerUsuarios">Ver lista de usuarios</a>
+                    <% } %>
+                    <a style="color: #17d66b" href="/verPerfil">Ver Cuenta</a>
+                    <a style="color: #17d66b" href="/cerrar">Cerrar session</a>
+
+                    <% } %>
+
+                    <a style="color: #17d66b" href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Banner -->
+
+        <section id="banner">
+            <%- include(fragmento) %>
+        </section>
+
+
+
+        <section id="three" class="wrapper align-center">
+            <div class="inner">
+                <div class="flex flex-3">
+                    <article>
+                    </article>
+                    <article>
+                        <div class="image round">
+                            <img src="images/images.png" alt="Pic 01" />
+                        </div>
+                        <header>
+                            <h3>Byron Montaño<br /> Paul Pasaca <br/>Victor Serrano</h3>
+                        </header>
+                        <p><i class="fas fa-at"></i>byron.montano@unl.edu.ec<br /><i class="fas fa-at"></i>paul.pasaca@unl.edu.ec<br /><i class="fas fa-at"></i>victor.serrano@unl.edu.ec</p>
+
+                    </article>
+                    <article>
+                    </article>
+
+
+                </div>
+            </div>
+        </section>
+        <script src="javascripts/jquery.min.js"></script>
+        <script src="javascripts/skel.min.js"></script>
+        <script src="javascripts/util.js"></script>
+        <script src="javascripts/main.js"></script>
+
+    </body>
+</html>

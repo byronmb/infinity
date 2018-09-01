@@ -1,0 +1,120 @@
+
+
+<html>
+    <head>
+        <title>Proyecto</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="stylesheets/main.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"  crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"  crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="/" class="logo"><strong><i class="fas fa-home fa-2x" style="color: #17d66b">Proyecto</i>  </strong> </a>
+                <nav id="nav">
+                    <a style="color: #17d66b" href="/">Principal</a>
+                    <a style="color: #17d66b" href="/registrar">Registrarse</a>
+                    <a style="color: #17d66b" href="/cuenta">Mi Cuenta</a>
+                </nav>
+                <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+            </div>
+        </header>
+
+        <!-- Banner -->
+        <section id="banner">
+            <div class="inner">
+                <div class="container" style="margin: -100px auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="contact-form" id="validation-form" method="POST" action="/registro/save">
+
+                                <div class="form-group row">
+                                    <label for="nombres" class="col-sm-2 col-form-label"> Nombre </label>
+                                    <i class="fa fa-user bigicon"></i>
+                                    <div class="col-md-3 mb-3" >
+
+                                        <input type="text" id='nombres' name='nombres' placeholder="Nombre" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="apellidos" class="col-sm-2 col-form-label">Apellido</label>
+                                    <i class="fa fa-user bigicon"></i>
+                                    <div class="col-md-3 mb-3">
+                                        <input type="text" id='apellidos' name='apellidos' placeholder="Apellido" required>
+                                    </div>
+
+
+                                </div>
+                                <div class="form-group row">
+
+                                    <label for="email" class="col-sm-2 col-form-label">Correo</label>
+                                    <i class="fas fa-envelope"></i>
+                                    <div class="col-md-3 mb-3">
+                                        <input type="email" id='email' name='email' placeholder="Correo" required>
+                                    </div>
+
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="cuerpo" class="col-sm-2 col-form-label">Contraseña</label>
+                                    <i class="fa fa-key"></i>
+                                    <div class="col-md-3 mb-3">
+                                        <input type="password" id='clave' name='clave' placeholder="Contraseña" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-3 mb-3">
+                                        <button style="align-items: center ">Registrar</button>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        
+        <section id="three" class="wrapper align-center">
+            <div class="inner">
+                <div class="flex flex-3">
+                    <article>
+                    </article>
+                    <article>
+                        <div class="image round">
+                            <img src="images/images.png" alt="Pic 01" />
+                        </div>
+                        <header>
+                            <h3>Byron Montaño<br /> Paul Pasaca <br/>Victor Serrano</h3>
+                        </header>
+                        <p><i class="fas fa-at"></i>byron.montano@unl.edu.ec<br /><i class="fas fa-at"></i>paul.pasaca@unl.edu.ec<br /><i class="fas fa-at"></i>victor.serrano@unl.edu.ec</p>
+
+                    </article>
+                    <article>
+                    </article>
+
+
+                </div>
+            </div>
+        </section>
+        <script src="javascripts/jquery.min.js"></script>
+        <script src="javascripts/skel.min.js"></script>
+        <script src="javascripts/util.js"></script>
+        <script src="javascripts/main.js"></script>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+<div class="inner">
+    <header>
+        <h1>Bienvenido al Proyecto </h1>
+        <img id="texto" style="width: 200px" src="images/logo.png">
+        <% if (loginA == 1) {%>
+        
+        <h2  style="color: white">Bienvenido Admin </h2>
+        <div style=" align: center; width: 20%; border-radius: 15px ;   background-color: slategrey">
+            <h5>CUENTA DE GOOGLE DRIVE<br>
+                USER: infinitynode0@gmail.com<br>
+                PASSWORD: proyectoprogramacion</h5>               
+        </div>
+         
+        <%}%>
+    </header>
+    <br>
+    <div class="flex ">
+
+        <div>
+            <a href="/Revista">
+            <i class="fas fa-book-open fa-2x" style="color: #17d66b"></i> </a>
+                
+            <% if (login == false) { %>
+            <h3 ><a>Revistas</a></h3>
+            <% } else { %>
+            <h3 ><a href="/Revista">Revistas</a></h3>
+            <% } %>
+            <p>Revistas cientificas</p>
+        </div>
+
+        <div>
+             <a href="/Libros">
+            <i class="fas fa-book fa-2x" style="color: #17d66b"></i> </a>
+            
+            <% if (login == false) { %>
+            <h3 ><a> Libros</a></h3>
+            <% } else { %>
+            <h3 ><a href="/Libros"> Libros</a></h3>
+            <% } %>
+            <p>Libros cientificos</p>
+        </div>
+
+        <div>
+             <a href="/Articulos">
+            <i class="fas fa-file-alt fa-2x" style="color: #17d66b"></i> </a>
+            <% if (login == false) { %>
+            <h3 ><a> Articulos</a></h3>
+            <% } else { %>
+            <h3 ><a href="/Articulos"> Articulos</a></h3>
+            <% } %>
+            <p>Articulos cientificos</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <% if (login == false) { %>
+        <a href="/cuenta" class="button">Ingresar</a>
+        <% }  %>
+    </footer>
+</div>

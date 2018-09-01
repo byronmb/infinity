@@ -1,0 +1,16 @@
+{
+    "development":{
+        "username": "byron",
+        "password": "12345",
+        "database": "Proyecto",
+        "host": "localhost",
+        "dialect": "mysql"
+    },
+    "staging":{
+        "username": "byron",
+        "password": "12345",
+        "database": "Proyecto",
+        "host": "localhost",
+        "dialect": "mysql"
+    }
+}
