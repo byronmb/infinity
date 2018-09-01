@@ -21,7 +21,6 @@ class AutentificacionControllers {
     mostrarPersonas(req, res, next) {
         var Personas = models.persona;
         Personas.findAll().then(function (persona) {
-            console.log("*************************************" + persona + "*******************************");
             res.send(persona);
         });
     }
@@ -32,15 +31,12 @@ class AutentificacionControllers {
     mostrarCuenta(req, res, next) {
         var user = models.cuenta;
         user.findAll().then(function (cuenta) {
-            console.log("*************************************" + cuenta + "*******************************");
             res.send(cuenta);
         });
     }
     eliminarUsuario(req, res, next) {
-        console.log("*************************************1*******************************");
         var Personas = models.persona;
         var user = models.cuenta;
-        console.log("*************************************" + req.body.id + "*******************************");
         user.destroy({where: {id: req.body.id}}).then(function (err, result) {
             Personas.destroy({where: {id: req.body.id}}).then(function (rowsDelete) {
                 res.redirect('/verUsuarios');
@@ -49,13 +45,11 @@ class AutentificacionControllers {
 
     }
     eliminarCuenta(req, res, next) {
-        console.log("*******************************************************");
         var Personas = models.persona;
         var user = models.cuenta;
         var id =req.user.id;
         req.session.destroy();
         user.destroy({where: {id: id}}).then(function (err, result) {
-             console.log("*******************************************************");
             Personas.destroy({where: {id: id}}).then(function (rowsDelete) {
                 res.redirect('/');
             }).catch(next);
@@ -65,8 +59,6 @@ class AutentificacionControllers {
     editarUsuario(req, res, next) {
         var Personas = models.persona;
         var user = models.cuenta;
-        console.log(req.body.email+"****************************************");
-        console.log(req.user.usuario+"****************************************");
         if (req.body.email !== req.user.usuario) {
             user.findOne({where: {usuario: req.body.email}}).then(function (cuenta) {
                 if (!cuenta) {
@@ -84,7 +76,6 @@ class AutentificacionControllers {
                         }).catch(next);
                     }).catch(next);
                 } else {
-                    console.log("***************************************************");
                     console.log('Correo repetido');
                     res.redirect('/verPerfil');
                 }
