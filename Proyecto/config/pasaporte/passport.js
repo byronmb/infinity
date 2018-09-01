@@ -47,7 +47,7 @@ module.exports = function (passport, cuenta, persona, rol) {
                     {
                         var userPassword = generateHash(password);
                         Rol.findOne({
-                            where: {nombre: 'administrador'}
+                            where: {nombre: 'usuario'}
                         }).then(function (rol) {
                             if (rol) {
                                 var dataPersona =
