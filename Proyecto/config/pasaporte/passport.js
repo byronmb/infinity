@@ -66,7 +66,7 @@ module.exports = function (passport, cuenta, persona, rol) {
                                                 {
                                                     usuario: email,
                                                     clave: userPassword,
-                                                    id_rol: 1,
+                                                    id_rol: 2,
                                                     id_persona: newPersona.id
                                                 };
 
