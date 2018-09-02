@@ -49,6 +49,13 @@ module.exports = function (passport, cuenta, persona, rol) {
                         Rol.findOne({
                             where: {nombre: 'usuario'}
                         }).then(function (rol) {
+                            
+                            Rol.findOne({where: {nombre:'usuario'}}).then(function(rol){
+                                if(rol){
+                                    res.redirect('/');
+                                }
+                            });
+                            
                             if (rol) {
                                 var dataPersona =
                                         {
