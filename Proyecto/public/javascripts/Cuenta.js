@@ -38,7 +38,7 @@ function ListadoRevistaAdmin() {
                 html += "<td>" + data[i].autor + "</td>";
                 html += "<td>" + data[i].plataforma + "</td>";
                 html += "<td><a href='" + data[i].link + "'>Link</a></td>";
-                html += "<td><a id='btn_elegir_" + i + "' href='#'>Elegir</a>\n\
+                html += "<% if (loginA == 'administrador') {%><td><a id='btn_elegir_" + i + "' href='#'>Elegir</a>\n\
                                 <script>\n\
                                     $('#btn_elegir_" + i + "').click(function(){\n\
                                         var x = document.getElementById('editar');\n\
@@ -52,7 +52,7 @@ function ListadoRevistaAdmin() {
                                         $('#id_doc').val('" + data[i].id + "');\n\
                                     }); \n\
                                 </script>";
-                html += "</td>";
+                html += "</td><%}%>";
                 html += "</tr>";
             }
 
@@ -98,7 +98,7 @@ function ListadoLibroAdmin() {
                 html += "<td>" + data[i].autor + "</td>";
                 html += "<td>" + data[i].plataforma + "</td>";
                 html += "<td><a href='" + data[i].link + "'>Link</a></td>";
-                html += "<td><a id='btn_elegir_" + i + "' href='#'>Elegir</a>\n\
+                html += "<% if (loginA == 'administrador') {%><td><a id='btn_elegir_" + i + "' href='#'>Elegir</a>\n\
                                 <script>\n\
                                     $('#btn_elegir_" + i + "').click(function(){\n\
                                         var x = document.getElementById('editar');\n\
@@ -112,7 +112,7 @@ function ListadoLibroAdmin() {
                                         $('#id_doc').val('" + data[i].id + "');\n\
                                     }); \n\
                                 </script>";
-                html += "</td>";
+                html += "</td><%}%>";
                 html += "</tr>";
             }
 
@@ -157,7 +157,7 @@ function ListadoArticuloAdmin() {
                 html += "<td>" + data[i].autor + "</td>";
                 html += "<td>" + data[i].plataforma + "</td>";
                 html += "<td><a href='" + data[i].link + "'>Link</a></td>";
-                html += "<td><a id='btn_elegir_" + i + "' href='#'>Elegir</a>\n\
+                html += "<% if (loginA == 'administrador') {%><td><a id='btn_elegir_" + i + "' href='#'>Elegir</a>\n\
                                 <script>\n\
                                     $('#btn_elegir_" + i + "').click(function(){\n\
                                         var x = document.getElementById('editar');\n\
@@ -171,7 +171,7 @@ function ListadoArticuloAdmin() {
                                         $('#id_doc').val('" + data[i].id + "');\n\
                                     }); \n\
                                 </script>";
-                html += "</td>;
+                html += "</td><%}%>";
                 html += "</tr>";
             }
 
@@ -204,5 +204,6 @@ function ListadoAdmin() {
         }
     });
 }
+
 
 
