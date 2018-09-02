@@ -22,12 +22,12 @@ class documentoController {
                     if (newDoc) {
                         res.redirect('/Revista');
                     } else {
-                        res.redirect('/ver');
+                        res.redirect('/guardarRevista');
                     }
                 });
             } else {
                 console.log("Ya existe");
-                res.redirect('/ver');
+                res.redirect('/guardarRevista');
             }
         });
     }
@@ -70,12 +70,12 @@ class documentoController {
                     if (newDoc) {
                         res.redirect('/Libros');
                     } else {
-                        res.redirect('/ver');
+                        res.redirect('/guardarLibro');
                     }
                 });
             } else {
                 console.log("Ya existe");
-                res.redirect('/ver');
+                res.redirect('/guardarLibro');
             }
         });
     }
@@ -157,7 +157,6 @@ class documentoController {
     eliminarArticulo(req, res, next) {
 
         Articulo.destroy({where: {id: req.body.id_doc}}).then(function (rowsDelete) {
-            console.log("***********************TE ELIMINASTES********************************");
             res.redirect('/Articulos');
         }).catch(next);
     }
