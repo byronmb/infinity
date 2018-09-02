@@ -1,16 +1,16 @@
 {
     "development":{
-        "username": "byron",
-        "password": "12345",
-        "database": "Proyecto",
-        "host": "localhost",
+        "username": "infinity",
+        "password": "infinityNode123",
+        "database": "infinity",
+        "host": "209.97.183.238",
         "dialect": "mysql"
     },
     "staging":{
-        "username": "byron",
-        "password": "12345",
-        "database": "Proyecto",
-        "host": "localhost",
+        "username": "infinity",
+        "password": "infinityNode123",
+        "database": "infinity",
+        "host": "209.97.183.238",
         "dialect": "mysql"
     }
 }
