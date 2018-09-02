@@ -29,7 +29,7 @@ router.post('/login', passport.authenticate('local-signin', {successRedirect: '/
 
 //Registro
 router.get('/registro', authController.signup);
-router.post('/registro/save', passport.authenticate('registrarse', {successRedirect: '/',
+router.post('/registro/save', passport.authenticate('local-signup', {successRedirect: '/',
     failureRedirect: '/registro'}
 ));
 
