@@ -3,14 +3,14 @@
         "username": "infinity",
         "password": "infinityNode123",
         "database": "infinity",
-        "host": "209.97.183.238",
+        "host": "localhost",
         "dialect": "mysql"
     },
     "staging":{
         "username": "infinity",
         "password": "infinityNode123",
         "database": "infinity",
-        "host": "209.97.183.238",
+        "host": "localhost",
         "dialect": "mysql"
     }
 }
