@@ -71,7 +71,7 @@ function ListadoLibro() {
             for (var i = 0; i < data.length; i++) {
                 html += "<tr>";
                 html += "<td><img src= '" + data[i].link_imagen + "' width='200' height='300'</td>";
-                html += "<td  WIDTH='100px'>" + data[i].titulo + "</td>";
+                html += "<td  WIDTH='100'>" + data[i].titulo + "</td>";
                 html += "<td>" + data[i].autor + "</td>";
                 html += "<td>" + data[i].plataforma + "</td>";
                 html += "<td><a href='" + data[i].link + "'>Link</a></td>";
@@ -94,7 +94,7 @@ function ListadoLibroAdmin() {
             for (var i = 0; i < data.length; i++) {
                 html += "<tr>";
                 html += "<td><img src= '" + data[i].link_imagen + "' width='200' height='300'</td>";
-                html += "<td WIDTH='100px'>" + data[i].titulo + "</td>";
+                html += "<td WIDTH='100'>" + data[i].titulo + "</td>";
                 html += "<td>" + data[i].autor + "</td>";
                 html += "<td>" + data[i].plataforma + "</td>";
                 html += "<td><a href='" + data[i].link + "'>Link</a></td>";
