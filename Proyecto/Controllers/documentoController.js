@@ -97,50 +97,71 @@ class documentoController {
     }
 
     editarRevista(req, res, next) {
-        Revista.update(
-                {link_imagen: req.body.link_imagen,
-                    titulo: req.body.v_titulo,
-                    autor: req.body.autor,
-                    plataforma: req.body.plataforma,
-                    link: req.body.link,
-                    id_persona: req.user.id},
-                {returning: true, where: {id: req.body.id}}
-        ).then(function (rowsUpdate) {
-            res.redirect('/Revista');
-        })
-                .catch(next);
+        Revista.findOne({where: {titulo: req.body.v_titulo}}).then(function (revista) {
+            if (revista.id == req.body.id) {
+                Revista.update(
+                        {link_imagen: req.body.link_imagen,
+                            titulo: req.body.v_titulo,
+                            descripcion: req.body.descripcion,
+                            plataforma: req.body.plataforma,
+                            link: req.body.link,
+                            id_persona: req.user.id},
+                        {returning: true, where: {id: req.body.id}}
+                ).then(function (rowsUpdate) {
+                    res.redirect('/Revista');
+                }).catch(next);
+            } else {
+                console.log("*********************ESTA REPETIDA********************");
+                res.redirect('/Revista');
+            }
+        });
+
     }
 
     editarLibro(req, res, next) {
-        Libro.update(
-                {link_imagen: req.body.link_imagen,
-                    titulo: req.body.v_titulo,
-                    autor: req.body.autor,
-                    plataforma: req.body.plataforma,
-                    link: req.body.link,
-                    id_persona: req.user.id},
-                {returning: true, where: {id: req.body.id}}
-        )
-                .then(function (rowsUpdate) {
+        Libro.findOne({where: {titulo: req.body.v_titulo}}).then(function (libro) {
+            if (libro.id == req.body.id) {
+                Libro.update(
+                        {link_imagen: req.body.link_imagen,
+                            titulo: req.body.v_titulo,
+                            descripcion: req.body.descripcion,
+                            plataforma: req.body.plataforma,
+                            link: req.body.link,
+                            id_persona: req.user.id},
+                        {returning: true, where: {id: req.body.id}}
+                ).then(function (rowsUpdate) {
                     res.redirect('/Libros');
-                })
-                .catch(next);
+                }).catch(next);
+            } else {
+                console.log("*********************ESTA REPETIDA********************");
+                res.redirect('/Libros');
+            }
+        });
+
     }
 
     editarArticulo(req, res, next) {
-        Articulo.update(
-                {link_imagen: req.body.link_imagen,
-                    titulo: req.body.v_titulo,
-                    autor: req.body.autor,
-                    plataforma: req.body.plataforma,
-                    link: req.body.link,
-                    id_persona: req.user.id},
-                {returning: true, where: {id: req.body.id}}
-        )
-                .then(function (rowsUpdate) {
+        Articulo.findOne({where: {titulo: req.body.v_titulo}}).then(function (articulo) {
+            if (articulo.id == req.body.id) {
+                Articulo.update(
+                        {link_imagen: req.body.link_imagen,
+                            titulo: req.body.v_titulo,
+                            descripcion: req.body.descripcion,
+                            plataforma: req.body.plataforma,
+                            link: req.body.link,
+                            id_persona: req.user.id},
+                        {returning: true, where: {id: req.body.id}}
+                ).then(function (rowsUpdate) {
                     res.redirect('/Articulos');
-                })
-                .catch(next);
+                }).catch(next);
+            } else {
+                console.log("*********************ESTA REPETIDA********************");
+                res.redirect('/Articulos');
+            }
+
+
+        });
+
     }
     eliminarRevista(req, res, next) {
         Revista.destroy({where: {id: req.body.id_doc}}).then(function (rowsDelete) {
