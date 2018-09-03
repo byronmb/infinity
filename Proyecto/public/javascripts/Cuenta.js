@@ -184,26 +184,7 @@ function ocultar() {
     var x = document.getElementById('editar');
     x.style.display = 'none';
 }
-function ListadoAdmin() {
-    var html = "Ningun Dato que mostrar";
-    $.ajax({
-        type: "GET",
-        url: "/mostrarPersonas",
-        success: function (data) {
-            for (var i = 0; i < data.length; i++) {
-                html += "<tr>";
-                html += "<td>" + data[i].id + "</td>";
-                html += "<td>" + data[i].nombres + "</td>";
-                html += "<td>" + data[i].apellidos + "</td>";
-                html += "<td>" + data[i].correo + "</td>";
-                html += "</tr>";
-            }
 
-            console.log(data);
-            $("#tabla tbody").html(html);
-        }
-    });
-}
 
 
 
