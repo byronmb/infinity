@@ -70,4 +70,3 @@ function ocultar() {
     var x = document.getElementById('eliminar');
     x.style.display = 'none';
 }
-
