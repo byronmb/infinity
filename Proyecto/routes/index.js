@@ -100,21 +100,21 @@ router.get('/guardarRevista', function (req, res, next) {
     if (req.isAuthenticated()&& req.user.id_rol==1) {
         res.render('Vista/GuardarRevista', {title: 'Principal', login: req.isAuthenticated()});
     } else {
-        res.render('Vista/Vista', {title: 'Principal',fragmento: '../Vista/fragmento/Vista', login: false, loginA: ''});
+        res.redirect('/');
     }
 });
 router.get('/guardarLibro', function (req, res, next) {
     if (req.isAuthenticated()&& req.user.id_rol==1) {
         res.render('Vista/GuardarLibro', {title: 'Principal', login: req.isAuthenticated()});
     } else {
-         res.render('Vista/Vista', {title: 'Principal',fragmento: '../Vista/fragmento/Vista', login: false, loginA: ''});
+         res.redirect('/');
     }
 });
 router.get('/guardarArticulo', function (req, res, next) {
     if (req.isAuthenticated()&& req.user.id_rol==1) {
         res.render('Vista/GuardarArticulo', {title: 'Principal', login: req.isAuthenticated()});
     } else {
-         res.render('Vista/Vista', {title: 'Principal',fragmento: '../Vista/fragmento/Vista', login: false, loginA: ''});
+         res.redirect('/');
     }
 });
 
@@ -122,7 +122,7 @@ router.get('/verUsuarios', function (req, res, next) {
     if (req.isAuthenticated()&& req.user.id_rol==1) {
         res.render('Vista/VerUsuarios', {title: 'Lista de usuarios'});
     } else {
-         res.render('Vista/Vista', {title: 'Principal',fragmento: '../Vista/fragmento/Vista', login: false, loginA: ''});
+         res.redirect('/');
     }
 });
 
